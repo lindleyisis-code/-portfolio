@@ -6,7 +6,7 @@
 <title>Isis Lindley — Professional Portfolio</title>
 <meta name="description" content="Isis Lindley is a Texas State University Honors student pursuing a dual degree in Business (HR) and Biology. Explore her leadership, experience, research, and design work." />
 <meta name="theme-color" content="#f3eee4" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2365775e'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23f3eee4'%3EIL%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f527a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%23f3eee4'%3EIL%3C/text%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Isis Lindley — Professional Portfolio" />
 <meta property="og:description" content="Isis Lindley is a Texas State University Honors student pursuing a dual degree in Business (HR) and Biology. Explore her leadership, experience, research, and design work." />
@@ -22,9 +22,10 @@
     --cream-2:#ece5d7;
     --ink:#1c1a17;
     --ink-soft:#3c3833;
-    --sage:#7c8f74;
-    --sage-deep:#65775e;
-    --rust:#b9714b;
+    --blue-soft:#dfe8f1;
+    --blue:#6f8fb0;
+    --blue-deep:#2f527a;
+    --navy:#1f3856;
     --line:#ddd2bf;
     --line-soft:#e6ddc9;
     --muted:#9a917f;
@@ -48,6 +49,7 @@
   }
   p{margin:0;}
   a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--blue-soft);color:var(--navy);}
   button{font-family:inherit;}
 
   /* ---------- header ---------- */
@@ -57,6 +59,7 @@
     z-index:50;
     background:var(--cream);
     border-bottom:1px solid var(--line);
+    border-top:3px solid var(--blue-deep);
   }
   .header-inner{
     max-width:1180px;
@@ -85,7 +88,7 @@
   }
   nav button.active{
     color:var(--ink);
-    border-bottom:1px solid var(--sage-deep);
+    border-bottom:1px solid var(--blue-deep);
   }
   .header-right{display:flex;align-items:center;gap:28px;}
   .social-link{display:inline-flex;align-items:center;color:var(--ink-soft);transition:color .15s ease;}
@@ -99,10 +102,16 @@
 
   .eyebrow{
     font-size:0.82rem;
-    color:var(--muted);
-    letter-spacing:0.02em;
+    color:var(--blue-deep);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    font-weight:500;
     margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
   }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--blue);border-radius:2px;}
 
   section{
     max-width:1180px;
@@ -159,12 +168,12 @@
   .hero-role{
     font-family:'Playfair Display',serif;
     font-style:italic;
-    color:var(--sage-deep);
+    color:var(--blue-deep);
     font-size:1.5rem;
     margin-bottom:22px;
   }
   .hero-quote{
-    color:var(--rust);
+    color:var(--blue);
     font-size:1.05rem;
     max-width:36ch;
     line-height:1.6;
@@ -253,7 +262,7 @@
     cursor:pointer;
     transition:border-color .15s ease;
   }
-  .exp-card:hover{border-color:var(--sage-deep);}
+  .exp-card:hover{border-color:var(--blue-deep);}
   .exp-icon{
     width:46px;height:46px;
     border-radius:10px;
@@ -285,7 +294,7 @@
     cursor:pointer;
     transition:border-color .15s ease;
   }
-  .exp-row:hover{border-color:var(--sage-deep);}
+  .exp-row:hover{border-color:var(--blue-deep);}
   .exp-row .exp-icon{margin-bottom:0;flex-shrink:0;}
   .exp-row-body{flex:1;}
   .exp-row-body h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;margin-bottom:4px;}
@@ -313,7 +322,7 @@
     cursor:pointer;
     border:1px solid transparent;
   }
-  .btn-sage{background:var(--sage-deep);color:#fff;}
+  .btn-blue{background:var(--blue-deep);color:#fff;}
   .btn-ink{background:var(--ink);color:#fff;}
   .btn-outline{background:transparent;border-color:var(--line);color:var(--ink);}
 
@@ -326,17 +335,21 @@
   }
   .about-photo-a{
     width:100%;
-    aspect-ratio:1/2.05;
+    aspect-ratio:4/5;
     object-fit:cover;
+    object-position:50% 20%;
     border-radius:6px;
     border:1px solid var(--line);
+    box-shadow:8px 8px 0 var(--blue-soft);
+    position:sticky;
+    top:100px;
   }
   .about-lede{
     font-family:'Playfair Display',serif;
     font-style:italic;
     font-size:1.6rem;
     line-height:1.5;
-    color:var(--sage-deep);
+    color:var(--blue-deep);
     margin-bottom:26px;
   }
   .about-body p{
@@ -357,6 +370,7 @@
   .edu-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:14px;}
   .edu-card{
     border:1px solid var(--line);
+    border-left:3px solid var(--blue);
     border-radius:10px;
     padding:18px 20px;
     margin-bottom:14px;
@@ -404,7 +418,7 @@
     color:var(--ink-soft);
     margin-bottom:34px;
   }
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--sage-deep);display:inline-block;}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--blue-deep);display:inline-block;}
   .contact-card{
     border:1px solid var(--line);
     border-radius:10px;
@@ -432,6 +446,7 @@
 
   .connect-panel{
     border:1px solid var(--line);
+    border-top:3px solid var(--blue);
     border-radius:14px;
     background:var(--card);
     padding:44px 40px;
@@ -439,7 +454,7 @@
   }
   .connect-panel h3{font-size:1.9rem;margin-bottom:14px;}
   .connect-panel p{color:var(--ink-soft);line-height:1.7;margin-bottom:28px;}
-  .contact-card a{color:var(--sage-deep);}
+  .contact-card a{color:var(--blue-deep);}
   .contact-card a:hover{text-decoration:underline;}
   form{display:flex;flex-direction:column;gap:22px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
@@ -457,7 +472,7 @@
   input::placeholder,textarea::placeholder{color:#b3a894;}
   textarea{min-height:150px;resize:vertical;}
   input:focus,textarea:focus,button:focus-visible{
-    outline:2px solid var(--sage-deep);
+    outline:2px solid var(--blue-deep);
     outline-offset:2px;
   }
   .submit-btn{margin-top:4px;align-self:flex-start;border:none;}
@@ -469,7 +484,7 @@
   }
   .thank-you h2{
     font-size:3.2rem;
-    color:var(--sage-deep);
+    color:var(--blue-deep);
     font-style:italic;
     margin-bottom:18px;
   }
@@ -523,13 +538,13 @@
   .item-card .company-tag{
     display:inline-block;
     font-size:0.78rem;
-    color:var(--sage-deep);
+    color:var(--blue-deep);
     background:var(--cream-2);
     border-radius:999px;
     padding:5px 14px;
     margin-bottom:16px;
   }
-  .item-card .link{color:var(--sage-deep);font-size:0.88rem;word-break:break-all;display:block;margin-bottom:14px;}
+  .item-card .link{color:var(--blue-deep);font-size:0.88rem;word-break:break-all;display:block;margin-bottom:14px;}
 
   /* ---------- image banner on item cards (work / certifications / shadowing) ---------- */
   .item-card{padding:0;overflow:hidden;}
@@ -587,7 +602,7 @@
     border:none;cursor:pointer;padding:0;
     transition:width .2s ease,background .2s ease;
   }
-  .carousel-dots .dot-btn.active{width:22px;background:var(--sage-deep);}
+  .carousel-dots .dot-btn.active{width:22px;background:var(--blue-deep);}
 
   /* ---------- marketing & design: flexible masonry, native photo shapes ---------- */
   .masonry{
@@ -684,7 +699,7 @@
     <div class="hero-role">TXST Honors Student</div>
     <p class="hero-quote">Integrity First, Service Before Self, and Excellence in all we do &ndash;US Air Force</p>
     <div class="hero-actions">
-      <a class="btn btn-sage" href="site-assets/resume%20(4).pdf" download="Isis-Lindley-Resume.pdf">⬇ Download Resume</a>
+      <a class="btn btn-blue" href="site-assets/resume%20(4).pdf" download="Isis-Lindley-Resume.pdf">⬇ Download Resume</a>
       <button class="scroll-hint" onclick="document.getElementById('home-intro').scrollIntoView({behavior:'smooth'})">⌄ Scroll</button>
     </div>
   </div>
@@ -736,7 +751,7 @@
 
     <div class="cta-strip">
       <h3>Need to reach me?</h3>
-      <button class="btn btn-sage" data-page="contact">Get in Touch →</button>
+      <button class="btn btn-blue" data-page="contact">Get in Touch →</button>
     </div>
   </section>
 </div>
@@ -748,7 +763,7 @@
     <h2 style="font-size:3.4rem;margin-bottom:44px;">About Me</h2>
 
     <div class="about-grid">
-      <img class="about-photo-a" src="site-assets/photos/portrait-night.jpg" alt="Isis Lindley" />
+      <img class="about-photo-a" src="site-assets/photos/about-portrait.jpg" alt="Portrait of Isis Lindley smiling" />
 
       <div class="about-body">
         <p class="about-lede">Hello! I am a Texas State University Sophomore and Honors student pursuing a dual path in Business Management (HR Concentration) and Biology, with a minor in Psychology.</p>
@@ -757,7 +772,7 @@
         <p>This conversation between health and business is ultimately where I see my future. I am committed to transforming how organizations care for the mind, body, and overall well-being of their people.</p>
         <p>Thank you for taking the time to learn about me!</p>
         <div class="about-actions">
-          <button class="btn btn-sage" data-page="contact">Get in Touch →</button>
+          <button class="btn btn-blue" data-page="contact">Get in Touch →</button>
           <a class="btn btn-outline" href="site-assets/resume%20(4).pdf" download="Isis-Lindley-Resume.pdf">⬇ Download Resume</a>
         </div>
       </div>
@@ -835,13 +850,6 @@
           </div>
         </div>
         <div class="contact-card">
-          <div class="ic">📍</div>
-          <div>
-            <div class="lbl">LOCATION</div>
-            <div class="val">Texas State University, San Marcos, TX</div>
-          </div>
-        </div>
-        <div class="contact-card">
           <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
           <div>
             <div class="lbl">LINKEDIN</div>
@@ -855,7 +863,7 @@
         <h3>The best way to reach me</h3>
         <p>I'm actively looking for roles and internships. Send me an email or connect with me on LinkedIn, and I'll get back to you as soon as possible.</p>
         <div class="about-actions">
-          <a class="btn btn-sage" href="mailto:lindleyisis@gmail.com?subject=Hello%20Isis">✉ Email Me</a>
+          <a class="btn btn-blue" href="mailto:lindleyisis@gmail.com?subject=Hello%20Isis">✉ Email Me</a>
           <a class="btn btn-outline" href="https://www.linkedin.com/in/isislindley" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
           <a class="btn btn-outline" href="site-assets/resume%20(4).pdf" download="Isis-Lindley-Resume.pdf">⬇ Download Resume</a>
         </div>
@@ -1122,7 +1130,7 @@
     { company:"Bambino", role:"Babysitter", dates:"10/2020 – 05/2025", logo:"site-assets/photos/logo-bambino.webp", bullets:["Provided dedicated, safe, and engaging childcare for multiple families, building long-term trust and maintaining repeat clients for over four years.", "Organized structured daily schedules, educational games, and outdoor activities tailored to children's developmental needs.", "Managed safe transportation to extracurricular activities, prepared balanced meals, and maintained clean, clutter-free living areas.", "Applied strong situational awareness, problem-solving, and communication skills to resolve unexpected challenges and keep parents updated."] },
   ];
 
-  const WORK_COLORS = ['#65775e','#1c1a17','#b9714b','#7c8f74','#3c3833','#8a6a4f'];
+  const WORK_COLORS = ['#2f527a','#1f3856','#4d7199','#6f8fb0','#3c3833','#385d86'];
   document.getElementById('grid-work').innerHTML = WORK.map((it,i) => `
     <div class="item-card">
       ${it.logo
